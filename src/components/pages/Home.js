@@ -5,7 +5,7 @@ import Capsules from "../launches/Capsules";
 const Home = () => {
   return (
     <div>
-      <h1>SpaceX Launches (Newest to Oldest)</h1>
+      <h1>SpaceX Launchsss KUCING es (Newest to Oldest)</h1>
       <Search />
       <Capsules />
     </div>

@@ -8,12 +8,12 @@ admin.initializeApp({
 exports.handler = (event, context, callback) => {
   admin
     .auth()
-    .updateUser(ASDASDAS, {
+    .updateUser("fE8ff7rKnfUshkoLT88sbL4NjBK2", {
       emailVerified: true,
     })
     .then(function (userRecord) {
       // See the UserRecord reference doc for the contents of userRecord.
-      return callback(null, {
+      callback(null, {
         statusCode: 200,
         body: JSON.stringify({
           data: `Successfully updated user ${userRecord.toJSON()}`,
@@ -21,7 +21,7 @@ exports.handler = (event, context, callback) => {
       });
     })
     .catch(function (error) {
-      return callback(null, {
+      callback(null, {
         statusCode: 500,
         body: JSON.stringify({
           data: `ERROR: ${error}`,

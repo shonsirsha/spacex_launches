@@ -6,9 +6,10 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://pig-test-50b88.firebaseio.com",
 });
+const adminAuth = admin.auth();
 exports.handler = async (event, context, callback) => {
   try {
-    await admin.auth().updateUser("fE8ff7rKnfUshkoLT88sbL4NjBK2", {
+    await adminAuth.updateUser("fE8ff7rKnfUshkoLT88sbL4NjBK2", {
       emailVerified: true,
     });
     return callback(null, {
@@ -21,7 +22,7 @@ exports.handler = async (event, context, callback) => {
     return callback(null, {
       statusCode: 500,
       body: JSON.stringify({
-        data: `ERROR: ${error}`,
+        data: `ERROR: ${e}`,
       }),
     });
   }

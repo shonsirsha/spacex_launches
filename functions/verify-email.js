@@ -9,7 +9,7 @@ admin.initializeApp({
 const adminAuth = admin.auth();
 exports.handler = async (event, context, callback) => {
   try {
-    await adminAuth.updateUser("tWZO8S3Kv5S4Lsxl1DsBYJRhABs2", {
+    await adminAuth.updateUser("WZO8S3Kv5S4Lsxl1DsBYJRhABs2", {
       emailVerified: true,
     });
     admin.app().delete();

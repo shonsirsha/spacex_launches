@@ -12,6 +12,7 @@ exports.handler = async (event, context, callback) => {
     await adminAuth.updateUser("fE8ff7rKnfUshkoLT88sbL4NjBK2", {
       emailVerified: true,
     });
+    admin.app().delete();
     return callback(null, {
       statusCode: 200,
       body: JSON.stringify({
@@ -19,6 +20,7 @@ exports.handler = async (event, context, callback) => {
       }),
     });
   } catch (e) {
+    admin.app().delete();
     return callback(null, {
       statusCode: 500,
       body: JSON.stringify({
@@ -26,6 +28,7 @@ exports.handler = async (event, context, callback) => {
       }),
     });
   }
+
   // admin
   //   .auth()
   //   .updateUser("fE8ff7rKnfUshkoLT88sbL4NjBK2", {

@@ -8,7 +8,7 @@ admin.initializeApp({
 exports.handler = async (event, context, callback) => {
   admin
     .auth()
-    .updateUser(uid, {
+    .updateUser("fE8ff7rKnfUshkoLT88sbL4NjBK2", {
       emailVerified: true,
     })
     .then(function (userRecord) {

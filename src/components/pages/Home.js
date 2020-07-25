@@ -11,6 +11,8 @@ const Home = () => {
       } else {
         console.log("ASDSA");
         console.log(user.emailVerified);
+
+        console.log(user.uid);
       }
     });
   }, []);

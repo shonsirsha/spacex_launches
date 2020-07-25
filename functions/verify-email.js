@@ -5,7 +5,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://pig-test-50b88.firebaseio.com",
 });
-exports.handler = async (event, context, callback) => {
+exports.handler = (event, context, callback) => {
   admin
     .auth()
     .updateUser("fE8ff7rKnfUshkoLT88sbL4NjBK2", {

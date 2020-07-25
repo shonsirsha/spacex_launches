@@ -13,7 +13,6 @@ exports.handler = (event, context, callback) => {
     })
     .then(function (userRecord) {
       // See the UserRecord reference doc for the contents of userRecord.
-      console.log(userRecord.toJSON());
       return callback(null, {
         statusCode: 200,
         body: JSON.stringify({

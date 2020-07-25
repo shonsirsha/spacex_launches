@@ -9,14 +9,23 @@ admin.initializeApp({
 const db = admin.firestore();
 
 exports.handler = async (event, context, callback) => {
-  await db.collection("testkuc").add({
-    name: "Halu",
-  });
+  try {
+    await db.collection("testkuc").add({
+      name: "FAFAFA",
+    });
 
-  return callback(null, {
-    statusCode: 200,
-    body: JSON.stringify({
-      data: `Test data added successfully`,
-    }),
-  });
+    return callback(null, {
+      statusCode: 200,
+      body: JSON.stringify({
+        data: `Test datazzzz added successfully`,
+      }),
+    });
+  } catch (e) {
+    return callback(null, {
+      statusCode: 500,
+      body: JSON.stringify({
+        data: `ERROR: ${e}`,
+      }),
+    });
+  }
 };

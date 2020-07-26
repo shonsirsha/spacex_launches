@@ -19,12 +19,18 @@ exports.handler = async (event, context, callback) => {
     };
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
-        res.status(400).json({
-          msg: "error: " + err,
+        return callback(null, {
+          statusCode: 500,
+          body: JSON.stringify({
+            data: `ERROR: ${err}`,
+          }),
         });
       } else {
-        res.status(200).json({
-          msg: "success: " + info.response,
+        return callback(null, {
+          statusCode: 200,
+          body: JSON.stringify({
+            data: `Success! ${info.response}`,
+          }),
         });
       }
     });

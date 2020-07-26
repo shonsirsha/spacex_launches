@@ -6,15 +6,15 @@ exports.handler = (event, context, callback) => {
       host: "smtp.gmail.com",
       port: 587,
       auth: {
-        user: "seangeekpro@gmail.com",
-        pass: "seanKucing21!",
+        user: process.env.EMAIL_ADDRESS,
+        pass: process.env.EMAIL_ADDRESS_PW,
       },
       secure: false, // upgrade later with STARTTLS
     });
     let mailOptions = {
       from: '"PIG-HR Team" <noreply@pig-hr.com>',
       to: "sean.liesanggoro@code.berlin",
-      subject: "From Live Functiom ",
+      subject: "From Live Function with ENV ",
       html: "Halo! <br> kucing.",
     };
     transporter.sendMail(mailOptions, (err, info) => {

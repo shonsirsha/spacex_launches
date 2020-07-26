@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-exports.handler = async (event, context, callback) => {
+exports.handler = (event, context, callback) => {
   try {
     let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",

@@ -6,8 +6,8 @@ exports.handler = (event, context, callback) => {
       host: "smtp.gmail.com",
       port: 587,
       auth: {
-        user: process.env.EMAIL_ADDRESS,
-        pass: process.env.EMAIL_ADDRESS_PW,
+        user: "seangeekpro@gmail.com",
+        pass: "seanKucing21!",
       },
       secure: false, // upgrade later with STARTTLS
     });
